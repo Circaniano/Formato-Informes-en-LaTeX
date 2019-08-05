@@ -15,27 +15,21 @@
 \usepackage{listings} %comenzamos la configuración de nuestras lineas de codigo que se incluirá de ser necesario en el documento
 \usepackage[usenames]{color} %seteamos el uso de nombre y color
 \definecolor{gray97}{gray}{.97}%definimos nombre y color
-\definecolor{gray75}{gray}{.75}%definimos nombre y color
-\definecolor{gray45}{gray}{.45}%definimos nombre y color
-\definecolor{azul1}{RGB}{141,198,163}%definimos nombre y color
-\definecolor{azul2}{RGB}{24,107,122}%definimos nombre y color
-\definecolor{verde1}{RGB}{44,186,34}%definimos nombre y color
 \usepackage{textcomp}
 \lstset{
 		frame=Ltb,
 		framerule=1pt,
-		framextopmargin=3pt,
-		framexbottommargin=3pt,
-		framexleftmargin=0.4cm,
-		framesep=0pt,
-		rulesep=.4pt,
+		framextopmargin=5pt, %margen de arriba
+		framexbottommargin=5pt, %margen de abajo
+		framexleftmargin= -2pt, %separacion del margen izquierdo
+		framesep=2pt,
+		rulesep=0.2pt,
 		backgroundcolor=\color{gray97},
 		rulesepcolor=,
         tabsize=4,
-        rulecolor=\color{azul1},
-        basicstyle=\scriptsize\ttfamily,
+        rulecolor=\color[RGB]{106, 182, 217}, %AZUL  
         upquote=true,
-        aboveskip={1.5\baselineskip},
+        aboveskip={1.5\baselineskip}, %despues de la linea de texto
         columns=fixed,
         showstringspaces=false,
         extendedchars=true,
@@ -44,14 +38,14 @@
         showtabs=false,
         showspaces=false,
         showstringspaces=false,
-        identifierstyle=\ttfamily,
-        keywordstyle=\color[rgb]{0,0,1},
-        commentstyle=\color[rgb]{0.133,0.545,0.133},
-        stringstyle=\color[rgb]{0.627,0.126,0.941},
-        keywordstyle=\bfseries,
+        basicstyle=\scriptsize\ttfamily\color[RGB]{39, 100, 46}, %Numeros de lineas, simbolos, puntos y coma y demas
+        identifierstyle=\ttfamily\color[RGB]{56, 140, 189}, %variables
+        commentstyle=\color[RGB]{62, 179, 101}, %comentarios
+        stringstyle=\color[RGB]{247, 165, 42}, %impresiones
+        keywordstyle=\bfseries\color[RGB]{237, 118, 150}, %funciones
         %
 		numbers=left,
-		numbersep=15pt,
+		numbersep=-7pt, %separacion del numero
 		numberstyle=\tiny,
 		numberfirstline = false,
 		breaklines=true,
@@ -71,7 +65,7 @@
 \thanks{NombreA1 ApellidoA1 ApellidoA2, was with Rice University, Houston, TX 77005 USA. He is now with the Department of Physics, Colorado State University, Fort Collins, CO 80523 USA (e-mail: author\@ lamar.colostate.edu).}
 \thanks{NombreB1 ApellidoB1 ApellidoB2 is with the Electrical Engineering Department, University of Colorado, Boulder, CO 80309 USA, on leave from the National Research Institute for Metals, Tsukuba, Jaan (e-mail: author\@ nrim.go.jp).}}
 
-\markboth{CIRCAE INFORME 201901-07-31-G1-P3-005}{} % Codigo del informe que corresponde a: semestre | mes | dia | numero de grupo con la G antepuesta | numero de proyecto con la P antepuesta | número de informe
+\markboth{CIRCAE INFORME \today -G1-P3-005}{} % Codigo del informe que corresponde a: - numero de grupo con la G antepuesta - numero de proyecto con la P antepuesta | número de informe
 \maketitle
 
 
@@ -81,8 +75,11 @@ MicroMouse es un dispositivo en el que se aplica principios de ciencias de la co
 \keywords{\textbf{Introducimos nuestros términos clave en orden alfabetico, separado por comas. Para una lista de sugerencias de palabras o términos clave visitar \underline{http://www.ieee.org/organizations/pubs/ani\_ prod/keywrd98.txt}}}
 \end{abstract}
 
-
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%
+%%%%%   PROBLEMA     %%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Problema}
 \label{problema} %Tambien se puede poner etiquetas a secciones, subsecciones, subsubsecciones
@@ -116,40 +113,79 @@ De ser necesario se podría incluir algun gráfico pequeño, teniendo en cuenta 
         \label{img1} %La etiqueta usada para poder referenciarla desde cualquier parte del texto como se hizo con /eqref{img1}
 \end{figure} %finalizamos la figura
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%
+%%%%%   OBJETIVOS     %%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \section{Objetivos}
 
 Descripcion sencilla con los mismos parámetros de ''Problemas''  en \eqref{problema} %Ojo, para las comillas, usar las comillas simples 'para este texto', o dos veces las comillas simples ''para usar las comillas dobles'',
 
+Se puede ir citando libros \cite{libro2, libro3}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%
+%%%%%   PROCEDIMIETO     %%%%%%%%%%%%%%%%%%%%%%
+%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \section{Procedimiento}
 \label{procedimiento}
 
-El planteamiento debe extar expresado en un lenguaje claro, no redundante y bien detallado. Citando libros, artículos (referencias externas en general como \cite{libro1} , o citando carios libros a la vez \cite{libro2, libro2, libro3}), tambien haciendo referencia a teoremas, ejemplos, ecuaciones
+El planteamiento debe extar expresado en un lenguaje claro, no redundante y bien detallado. Citando libros, artículos (referencias externas en general como \cite{libro1} , o citando carios libros a la vez \cite{libro4, libro5, libro6}), tambien haciendo referencia a teoremas, ejemplos, ecuaciones, experimentos, etc como se muestra en el teorema \eqref{ejemplo_de_teorema_ejemplo_o_experimento_ecuaciones}.
 
 \begin{teor}
-\rm
-\label{fhfthfy_}
+\rm %este comando es para poner el texto en modo normal, si no la incluimos, todo el contenido se hace en cursiva
+\label{ejemplo_de_teorema_ejemplo_o_experimento_ecuaciones}
 El \textbf{Teorema de Feynman} relaciona el derivado de la energía total con respecto a un parámetro, al valor de la expectativa del derivado del hamiltoniano con respecto a ese mismo parámetro. Su aplicación más común está en el cálculo de fuerzas en moléculas (con los parámetros que son las posiciones de los núcleos) donde declara que una vez que la distribución espacial de los electrones se ha determinado solucionando la ecuación de Schrödinger, todas las fuerzas en el sistema se pueden calcular usando conceptos de la electrostática clásica.
 
 \begin{equation}
-\bigg\langle\frac {d\psi (\lambda)} {d\lambda } \left| \hat {H} _ {\lambda } \right| \psi (\lambda) \bigg\rangle + \langle\psi (\lambda)  |\hat {H} _ {\lambda } |\frac {d\psi (\lambda)} {d\lambda }\rangle + \bigg\langle\psi (\lambda) \bigg |\frac {d\hat {H} _ {\lambda}} {d\lambda } |\psi (\lambda) \bigg\rangle 
+\frac{dE}{d \lambda} = \left\langle \psi \left| \frac{d \widehat{H}}{d \lambda} \right| \psi \right\rangle 
+\end{equation}
+$\forall \lambda$, parámetro del que depende $\widehat{H}$ 
+para demostrar el teorema, comencemos con la ecuacion de \textbf{Schrödinger}, 
+\begin{equation*}
+\widehat{H} \psi = E \psi
+\end{equation*}
+y asumimos que todas las cantidades involucradas de la ecuacion dependen de algun parámetro $\lambda$.
+
+Para calcular la variación de $E$ respecto a $\lambda$, consideramos: 
+
+\begin{itemize}
+\item $E$ se obtiene de resolver de manera exacta la ecuacion de Schrödinger
+\item Los orbitales están normalizados: $\left\langle \psi | \psi \right\rangle= 1$
+\end{itemize}
+
+\begin{eqnarray*}
+\frac{dE}{d \lambda}    & = & \frac{d}{d \lambda} \left\langle \psi | \widehat{H} | \psi \right\rangle = \frac{d}{d \lambda} \int dx \psi^* \widehat{H} \psi, \\
+                        & = & \int dx \frac{d \psi^*}{d \lambda} \widehat{H} \psi + \int dx \psi^* \frac{d \widehat{H}}{d \lambda} \psi + \int dx \psi^* \widehat{H} \frac{d \psi}{d \lambda} \\
+                        & = & \int dx \psi^* \frac{d \widehat{H}}{d \lambda} \psi = \frac{dE}{d \lambda} = \left\langle \psi \left| \frac{d \widehat{H}}{d \lambda} \right| \psi \right\rangle \\
+                        && \int dx \psi^* \frac{d \widehat{H}}{d \lambda} \psi = \frac{dE}{d \lambda} = \left\langle \psi \left| \frac{d \widehat{H}}{d \lambda} \right| \psi \right\rangle %% Tener presente el uso de "&...$" que tiene algun simbolo en medio y el uso de "$$", por que depende de esto la correcta alineación de las ecuaciones
+\end{eqnarray*} %Se incluye el asterisco "*" al final de "eqnarray" para que estas ecuaciones no sean enumeradas, tambien se puede usar al final de "equation" y escribir como \begin{equation*} ... \end{equation*} para que las ecuaciones tampoco estén enumeradas. Tener presente que cuando no se enumera la ecuación, no re puede referenciar poniendo etiquetas con \label.
+
+\begin{equation}
+\label{ecuacion_algo}
+\frac{\partial u}{\partial t}
+   = h^2 \left( \frac{\partial^2 u}{\partial x^2}
+      + \frac{\partial^2 u}{\partial y^2}
+      + \frac{\partial^2 u}{\partial z^2} \right)
 \end{equation}
 
-\begin{eqnarray}
- \frac1{t - z} & = & \frac1{t - a - (z - a)} \\
- & = & \frac1{t - a}
-  \left( \frac1{1 - \frac{z - a}{t - a}} \right) \\
- & = & \frac1{t - a}
-  \left[ \sum_{i=0}^n \left( \frac{z - a}{t - a} \right)^n
-  + \frac{\left( \frac{z - a}{t - a} \right)^{n+1}}
-  {1 + \frac{z - a}{t - a}} \right]
-\end{eqnarray}
+Si se quiere poner etiquetas a ecuaciones, es mejor usarlas como en la ecuación \eqref{velocidad_de_la_luz}
 
+\begin{equation}
+\label{velocidad_de_la_luz}
+e = mC^2
+\end{equation}
+
+y usar \texttt{eqarray} con o sin asterisco para procedimientos
 \end{teor}
 
-\subsection{Types of Graphics}
-The following list outlines the different types of graphics published in 
-IEEE journals. They are categorized based on their construction, and use of 
-color/shades of gray:
+\subsection{Uso de Gráficos}
+
+Aparte del uso de gráfico que se hizo anteriormente, se puede incluir tambien subgráficos, y poder citarlos a todos los gráficos en su conjunto como en la figura \eqref{3figs}, o se puede referenciar de manera individual como en la figura \eqref{subfiguraA}, o dos a la vez como las figuras \eqref{subfiguraB} y \eqref{subfiguraC}
 
 \begin{figure}%
 \centering
@@ -160,128 +196,81 @@ color/shades of gray:
 \label{3figs}
 \end{figure}
 
-\subsubsection{Color/Grayscale figures}
-{Figures that are meant to appear in color, or shades of black/gray. Such 
-figures may include photographs, illustrations, multicolor graphs, and 
-flowcharts.}
-
-
-
-\subsubsection{Line Art figures}
-{Figures that are composed of only black lines and shapes. These figures 
-should have no shades or half-tones of gray, only black and white.}
-
-\begin{figure}
-    \centering
-        \includegraphics[width=8cm]{imagenes/img1}
-        \caption{A gull}
-        \label{fig:gull}
-\end{figure}
-
-\subsubsection{Author photos}
-{Head and shoulders shots of authors that appear at the end of our papers. }
-
-\subsection{Lineas de código}
-
-
-
-\noindent
-Ahora compila usando \texttt{gcc}:
-
-
-
-\subsubsection{Tables}
-{Data charts which are typically black and white, but sometimes include 
-color.}
-
+\subsubsection{Tablas}
+las tablas tambien son importantes, y estas se enumerarán como en la tabla \eqref{tabla1}
 \begin{table}
-\caption{Units for Magnetic Properties}
-\label{table}
-\setlength{\tabcolsep}{3pt}
-\begin{tabular}{|p{25pt}|p{75pt}|p{115pt}|}
+\caption{Unidades para las propiedades MAgnéticas} %%CPonemos nuestra descripción al encabezado de las tablas
+\label{tabla1} %etiqueta de \begin{table}...\end{table}
+\setlength{\tabcolsep}{3pt}%separacion del texto de la tabla (3 puntos)
+\begin{tabular}{|p{25pt}|p{75pt}|p{115pt}|} %las lineas verticales se inclyen con el comando "|", y las medidas, o ancho de cada columna de dan en puntos "pt" o lo pueden hacer en centimetros, no excediendo los 8.5cm, hacer la prueba
+\hline % nos ofrece lineas horizontales
+Sym            & Quantity                               & Conversion from Gaussian and \par CGS EMU to SI $^{\mathrm{a}}$ \\
 \hline
-Symbol& 
-Quantity& 
-Conversion from Gaussian and \par CGS EMU to SI $^{\mathrm{a}}$ \\
+$\Phi $        & magnetic flux                          & 1 Mx $\to  10^{-8}$ Wb $= 10^{-8}$ V$\cdot $s \\
+$B$            & magnetic flux density, magnetic induction    & 1 G $\to  10^{-4}$ T $= 10^{-4}$ Wb/m$^{2}$ \\
+$H$            & magnetic field strength                & 1 Oe $\to  10^{3}/(4\pi )$ A/m \\
+$m$            & magnetic moment                        & 1 erg/G $=$ 1 emu \par $\to 10^{-3}$ A$\cdot $m$^{2} = 10^{-3}$ J/T \\
+$M$            & magnetization                          & 1 erg/(G$\cdot $cm$^{3}) =$ 1 emu/cm$^{3}$ \par $\to 10^{3}$ A/m \\
+4$\pi M$       & magnetization                          & 1 G $\to  10^{3}/(4\pi )$ A/m \\
+$\sigma $      & specific magnetization                 & 1 erg/(G$\cdot $g) $=$ 1 emu/g $\to $ 1 A$\cdot $m$^{2}$/kg \\
+$j$            & magnetic dipole moment                 & 1 erg/G $=$ 1 emu \par $\to 4\pi \times  10^{-10}$ Wb$\cdot $m \\
+$J$            & magnetic polarization                  & 1 erg/(G$\cdot $cm$^{3}) =$ 1 emu/cm$^{3}$ \par $\to 4\pi \times  10^{-4}$ T \\
+$\chi, \kappa $& susceptibility                        & 1 $\to  4\pi $ \\
+$\chi_{\rho }$ & mass susceptibility                    & 1 cm$^{3}$/g $\to  4\pi \times  10^{-3}$ m$^{3}$/kg \\
+$\mu $         & permeability                           & 1 $\to  4\pi \times  10^{-7}$ H/m \par $= 4\pi \times  10^{-7}$ Wb/(A$\cdot $m) \\
+$\mu_{r}$      & relative permeability                  & $\mu \to \mu_{r}$ \\
+$w, W$         & energy density                         & 1 erg/cm$^{3} \to  10^{-1}$ J/m$^{3}$ \\
+$N, D$         & demagnetizing factor                   & 1 $\to  1/(4\pi )$ \\
 \hline
-$\Phi $& 
-magnetic flux& 
-1 Mx $\to  10^{-8}$ Wb $= 10^{-8}$ V$\cdot $s \\
-$B$& 
-magnetic flux density, \par magnetic induction& 
-1 G $\to  10^{-4}$ T $= 10^{-4}$ Wb/m$^{2}$ \\
-$H$& 
-magnetic field strength& 
-1 Oe $\to  10^{3}/(4\pi )$ A/m \\
-$m$& 
-magnetic moment& 
-1 erg/G $=$ 1 emu \par $\to 10^{-3}$ A$\cdot $m$^{2} = 10^{-3}$ J/T \\
-$M$& 
-magnetization& 
-1 erg/(G$\cdot $cm$^{3}) =$ 1 emu/cm$^{3}$ \par $\to 10^{3}$ A/m \\
-4$\pi M$& 
-magnetization& 
-1 G $\to  10^{3}/(4\pi )$ A/m \\
-$\sigma $& 
-specific magnetization& 
-1 erg/(G$\cdot $g) $=$ 1 emu/g $\to $ 1 A$\cdot $m$^{2}$/kg \\
-$j$& 
-magnetic dipole \par moment& 
-1 erg/G $=$ 1 emu \par $\to 4\pi \times  10^{-10}$ Wb$\cdot $m \\
-$J$& 
-magnetic polarization& 
-1 erg/(G$\cdot $cm$^{3}) =$ 1 emu/cm$^{3}$ \par $\to 4\pi \times  10^{-4}$ T \\
-$\chi , \kappa $& 
-susceptibility& 
-1 $\to  4\pi $ \\
-$\chi_{\rho }$& 
-mass susceptibility& 
-1 cm$^{3}$/g $\to  4\pi \times  10^{-3}$ m$^{3}$/kg \\
-$\mu $& 
-permeability& 
-1 $\to  4\pi \times  10^{-7}$ H/m \par $= 4\pi \times  10^{-7}$ Wb/(A$\cdot $m) \\
-$\mu_{r}$& 
-relative permeability& 
-$\mu \to \mu_{r}$ \\
-$w, W$& 
-energy density& 
-1 erg/cm$^{3} \to  10^{-1}$ J/m$^{3}$ \\
-$N, D$& 
-demagnetizing factor& 
-1 $\to  1/(4\pi )$ \\
-\hline
-\multicolumn{3}{p{251pt}}{Vertical lines are optional in tables. Statements that serve as captions for 
-the entire table do not need footnote letters. }\\
+\multicolumn{3}{p{251pt}}{Tenemos la opción de incluir texto con un ancho que sea igual o parecido al total del inicio para conceptos complementarios.}\\ % se incluye el numero 3, por que queremos abarcar las 3 columnas
 \multicolumn{3}{p{251pt}}{$^{\mathrm{a}}$Gaussian units are the same as cg emu for magnetostatics; Mx 
 $=$ maxwell, G $=$ gauss, Oe $=$ oersted; Wb $=$ weber, V $=$ volt, s $=$ 
 second, T $=$ tesla, m $=$ meter, A $=$ ampere, J $=$ joule, kg $=$ 
-kilogram, H $=$ henry.}
+kilogram, H $=$ henry.} %% Abarcamos las 3 columnas, pero sigue siendo parte de la tabla. Podemos encerrarla con lineas laterales, este ejersicio lo dejamos para ustedes, experimenten :p
 \end{tabular}
-\label{tab1}
 \end{table}
 
-\subsection{Multipart figures}
-Figures compiled of more than one sub-figure presented side-by-side, or 
-stacked. If a multipart figure is made up of multiple figure
-types (one part is lineart, and another is grayscale or color) the figure 
-should meet the stricter guidelines.
+\subsubsection{Otros}
 
-\subsection{File Formats For Graphics}\label{formats}
-Format and save your graphics using a suitable graphics processing program 
-that will allow you to create the images as PostScript (PS), Encapsulated 
-PostScript (.EPS), Tagged Image File Format (.TIFF), Portable Document 
-Format (.PDF), Portable Network Graphics (.PNG), or Metapost (.MPS), sizes them, and adjusts 
-the resolution settings. When 
-submitting your final paper, your graphics should all be submitted 
-individually in one of these formats along with the manuscript.
+tambien podemos agregar tablas simples, para datos pequeños usando el siguiete comando
 
-\begin{equation}
-\frac{\partial u}{\partial t}
-   = h^2 \left( \frac{\partial^2 u}{\partial x^2}
-      + \frac{\partial^2 u}{\partial y^2}
-      + \frac{\partial^2 u}{\partial z^2} \right)
-\end{equation}
+\begin{tabular}{ccc}  %% podemos usar c: que significa cumna centrada, r: que es columna a la derecha de "right", l: que es comuna a la izquerda de "left". Estas ajustan el ancho de sus columnas automaticamente, de acuerdo al contenido
+\hline
+columna1 & columna2 & columna3 \\
+\hline
+algoA    & algoB    & algoC \\
+masA     & mas B    & mas C 
+\end{tabular}
 
+pero tener presente que estos no se pueden poner etiquetas para referenciarlas, es una manera simple de organizar en tablas
+
+\subsection{Lineas de Código}
+
+Muchas veces tendremos la necesidad de incluir lineas de código los cuales se pueden incluir en partes o completas, de acuerdo a lo que se quiera presentar como sigue de manera completa
+
+\lstinputlisting[language=Octave]{codigo/cod1.m}
+
+o incluirla por partes, seleccionando las lineas que queremos incluir en nuestro informe
+
+\lstinputlisting[language=Octave, firstline=4, lastline=9]{codigo/cod1.m}
+
+Para ello se hace el uso sel package \texttt{listings}. El paquete listings es capaz de resaltar los siguientes lenguajes:
+
+ABAP$^{2,4}$, ACSL, Ada$^4$, Algol$^4$, Ant, Assembler$^{2,4}$, Awk$^4$, bash, Basic$^{2,4}$, C\#$^{5}$, C++$^4$, C$^4$, Caml$^4$, Clean, Cobol$^4$, Comal, csh, Delphi, Eiffel, Elan, erlang, Euphoria, Fortran$^4$, GCL, Gnuplot, Haskell, HTML, IDL$^4$, inform, Java$^4$, JVMIS, ksh, Lisp$^4$, Logo, Lua$^2$, make$^4$, Mathematica$^{1,4}$, Matlab, Mercury, MetaPost, Miranda, Mizar, ML, Modelica$^3$, Modula-2, MuPAD, NASTRAN, Oberon-2, Objective C$^5$ , OCL$^4$, Octave, Oz, Pascal$^4$, Perl, PHP, PL/I, Plasm, POV, Prolog, Promela, Python, R, Reduce, Rexx, RSL, Ruby, S$^4$, SAS, Scilab, sh, SHELXL, Simula$^4$, SQL, tcl$^4$, TeX4, VBScript, Verilog, VHDL$^4$, VRML$^4$, XML, XSLT. 
+
+\begin{enumerate}
+\item Soporta Mathematica solamente si se trata de un fichero en texto plano. No se pueden incluir ficheros *.NB., sin embargo, Mathematica puede exportar ficheros fuente formateados para su uso en \LaTeX.
+\item En estos lenguajes es obligatorio especificar el dialecto del lenguaje (por ejemplo: \texttt{language={[x86masm]Assembler}}).
+\item Modelica se soporta mediante el paquete \texttt{dtsyntax} disponible en \url{https://code.google.com/archive/p/dtsyntax/}
+\item Para estos lenguajes hay múltiples dialectos soportados: C, por ejemplo, puede ser ANSI, Handel, Objective y Sharp. Ver p. 12 del \url{http://ctan.dcc.uchile.cl/macros/latex/contrib/listings/listings.pdf} para una introducción a esto.
+\item Definido como un dialecto de otro lenguaje.
+\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%
+%%%%%   CONCLUSIONES     %%%%%%%%%%%%%%%%%%%%%%
+%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Conclusiones}
 A conclusion section is not required. Although a conclusion may review the 
@@ -289,10 +278,12 @@ main points of the paper, do not replicate the abstract as the conclusion. A
 conclusion might elaborate on the importance of the work or suggest 
 applications and extensions. 
 
-\lstinputlisting[language=Octave]{codigo/graf1.m}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%
+%%%%%   BIBLIOGRAFÍA     %%%%%%%%%%%%%%%%%%%%%%
+%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
-%La bibliografía:
 \bibliographystyle{ieeetr}
 \bibliography{bibliografia}
 
