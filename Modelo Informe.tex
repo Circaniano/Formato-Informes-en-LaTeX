@@ -4,61 +4,72 @@
 \usepackage[spanish]{babel} % hacemos que nuestro documentación vaya en español
 \usepackage{cite} % citas bibliográficas
 \usepackage{graphicx} %gráficos, usaremos solo .jpg o .png con estándares que ya veremos
-\usepackage{subfigure}
-\usepackage{url}
-\usepackage{amsmath} 
-%%%%%%% codigo
-\usepackage{color}
-\definecolor{gray97}{gray}{.97}
-\definecolor{gray75}{gray}{.75}
-\definecolor{gray45}{gray}{.45}
-
-\usepackage{listings}
-\lstset{ frame=Ltb,
-framerule=0pt,
-aboveskip=0.5cm,
-framextopmargin=3pt,
-framexbottommargin=3pt,
-framexleftmargin=0.4cm,
-framesep=0pt,
-rulesep=.4pt,
-backgroundcolor=\color{gray97},
-rulesepcolor=\color{black},
-%
-stringstyle=\ttfamily,
-showstringspaces = false,
-basicstyle=\small\ttfamily,
-commentstyle=\color{gray45},
-keywordstyle=\bfseries,
-%
-numbers=left,
-numbersep=15pt,
-numberstyle=\tiny,
-numberfirstline = false,
-breaklines=true,
-}
-% minimizar fragmentado de listados
-\lstnewenvironment{listing}[1][]
-{\lstset{#1}\pagebreak[0]}{\pagebreak[0]}
-
-\lstdefinestyle{consola}
-{basicstyle=\scriptsize\bf\ttfamily,
-backgroundcolor=\color{gray75},
-}
-
-\lstdefinestyle{C}
-{language=C,
-}
+\usepackage{subfigure} %usar subfiguras
+\usepackage{url} %agregar direcciones url
+\usepackage{amsmath} %expresiones matemáticas
+\newtheorem{teor}{Teorema}[section] %definimos la enumeración de Teoremas usando la etiqueta \begin{teor} ... \end{teor} para los ejemplos, podemos darle etiquetas para referenciarlas a lo largo del texto
+\newtheorem{ejem}{Ejemplo}[section] %definimos la enumeración de Ejemplos usando la etiqueta \begin{ejem} ... \end{ejem} para los ejemplos, podemos darle etiquetas para referenciarlas a lo largo del texto
+\newtheorem{exper}{Experimento}[section] %definimos la enumeración de Ejemplos usando la etiqueta \begin{exper} ... \end{exper} para los Experimentos, podemos darle etiquetas para referenciarlas a lo largo del texto
+\usepackage{setspace} %LA usamos para asignar el interlineado
+%%%%%%% settings para incluir codigo fuente en cualquier lenguaje
+\usepackage{listings} %comenzamos la configuración de nuestras lineas de codigo que se incluirá de ser necesario en el documento
+\usepackage[usenames]{color} %seteamos el uso de nombre y color
+\definecolor{gray97}{gray}{.97}%definimos nombre y color
+\definecolor{gray75}{gray}{.75}%definimos nombre y color
+\definecolor{gray45}{gray}{.45}%definimos nombre y color
+\definecolor{azul1}{RGB}{141,198,163}%definimos nombre y color
+\definecolor{azul2}{RGB}{24,107,122}%definimos nombre y color
+\definecolor{verde1}{RGB}{44,186,34}%definimos nombre y color
+\usepackage{textcomp}
+\lstset{
+		frame=Ltb,
+		framerule=1pt,
+		framextopmargin=3pt,
+		framexbottommargin=3pt,
+		framexleftmargin=0.4cm,
+		framesep=0pt,
+		rulesep=.4pt,
+		backgroundcolor=\color{gray97},
+		rulesepcolor=,
+        tabsize=4,
+        rulecolor=\color{azul1},
+        basicstyle=\scriptsize\ttfamily,
+        upquote=true,
+        aboveskip={1.5\baselineskip},
+        columns=fixed,
+        showstringspaces=false,
+        extendedchars=true,
+        breaklines=true,
+        prebreak = \raisebox{0ex}[0ex][0ex]{\ensuremath{\hookleftarrow}},
+        showtabs=false,
+        showspaces=false,
+        showstringspaces=false,
+        identifierstyle=\ttfamily,
+        keywordstyle=\color[rgb]{0,0,1},
+        commentstyle=\color[rgb]{0.133,0.545,0.133},
+        stringstyle=\color[rgb]{0.627,0.126,0.941},
+        keywordstyle=\bfseries,
+        %
+		numbers=left,
+		numbersep=15pt,
+		numberstyle=\tiny,
+		numberfirstline = false,
+		breaklines=true,
+		}
+\usepackage{graphicx}
+\usepackage[colorinlistoftodos]{todonotes}
 %%%%%%%
 \providecommand{\keywords}[1]{\textbf{\textit{Términos Clave---}} #1}
+
 \begin{document}
+\spacing{0.9} %definimos un interlineado de 0.9 para todo el documento
 
 \title{Nomre del Proyecto en Puestión}
 \author{NombreA1 ApellidoA1 ApellidoA2, Miembro, CIRCAE, NombreB1 ApellidoB1 ApellidoB2, Miembro, CIRCAE
 \thanks{Este primer párrafo puede contener auspiciadores u organizaciones que colaboraron con la realización de esta parte del proyecto y mencionar de manera expecífica que papel puntual tuvieron en el proceso... "This work was supported in part by the U.S. Department of Commerce under Grant BS123456."}
 \thanks{Los siguientes párrafos pueden contebner datos específicos de los autores del proyecto, por ejemplo "F. A. Author is with the National Institute of Standards and Technology, Boulder, CO 80305 USA (e-mail: author\@ boulder.nist.gov)"}
 \thanks{NombreA1 ApellidoA1 ApellidoA2, was with Rice University, Houston, TX 77005 USA. He is now with the Department of Physics, Colorado State University, Fort Collins, CO 80523 USA (e-mail: author\@ lamar.colostate.edu).}
-\thanks{NombreB1 ApellidoB1 ApellidoB2 is with the Electrical Engineering Department, University of Colorado, Boulder, CO 80309 USA, on leave from the National Research Institute for Metals, Tsukuba, Japan (e-mail: author\@ nrim.go.jp).}}
+\thanks{NombreB1 ApellidoB1 ApellidoB2 is with the Electrical Engineering Department, University of Colorado, Boulder, CO 80309 USA, on leave from the National Research Institute for Metals, Tsukuba, Jaan (e-mail: author\@ nrim.go.jp).}}
 
 \markboth{CIRCAE INFORME 201901-07-31-G1-P3-005}{} % Codigo del informe que corresponde a: semestre | mes | dia | numero de grupo con la G antepuesta | numero de proyecto con la P antepuesta | número de informe
 \maketitle
@@ -66,6 +77,7 @@ backgroundcolor=\color{gray75},
 
 \begin{abstract}
 MicroMouse es un dispositivo en el que se aplica principios de ciencias de la computación, principios ópticos, mecánicos, electrónicos y la integración de tecnologías de software y hardware \cite{libro1} . Lo que se pretende cubrir es la solución de un laberinto usando algoritmos de reconocimiento, almacenamiento, solución y retroalimentación con condiciones iniciales constantes en el tiempo.\\
+
 \keywords{\textbf{Introducimos nuestros términos clave en orden alfabetico, separado por comas. Para una lista de sugerencias de palabras o términos clave visitar \underline{http://www.ieee.org/organizations/pubs/ani\_ prod/keywrd98.txt}}}
 \end{abstract}
 
@@ -73,91 +85,79 @@ MicroMouse es un dispositivo en el que se aplica principios de ciencias de la co
 
 
 \section{Problema}
+\label{problema} %Tambien se puede poner etiquetas a secciones, subsecciones, subsubsecciones
     
-If your paper is intended for a conference, please contact your conference 
-editor concerning acceptable word processor formats for your particular 
-conference. 
+El problema será planteado con un pequeño preambulo y luego enumerado con items de la siguiente manera:
+    
+    \begin{itemize}
+    	\item Este es la primera parte del problema
+    	\item Segunda parte del prblema, y se puede saltar al siguiente sin necesidad de agregar barras ivertidas %estos --> \\
+		\item Tercer item tambien importante, y así se púede agregar más items al problema
+	\end{itemize}
+	
+	Otra manera de agregar partes del problema es enfatizando algunas palabras, usándolo de la siguiente manera:
+	
+	\begin{itemize}
+		\item \textbf{Interferencia} que nos lleva a la descripción del problema relacionado con interferencia.
+		\item \textbf{Ahorro energetico} en los circuitos en la fase de prototipado, que por lo general tienen un alto consumo energético.
+	\end{itemize}
 
-IEEE will do the final formatting of your paper. If your paper is intended 
-for a conference, please observe the conference page limits. 
+El uso de los items no es necesario si se tiene bien definido solo un punto, o dos, los cuales pueden ser abordados en un solo párrafo, o en más de ser necesarios, para ello siempre haremos uso de las dos barras invertidas\\ % estos --> \\
+Como se podrán dar cuenta, si incluimos estas dos barras, y solo saltamos un renglon, tendremos este resultado pero si incluimos las dos barras y luego saltamos un renglon como sigue \\
 
-\subsection{Concepto Principal}
+Tendremos este resultado, un párafo que tiene indentación, mientras que el anterior no lo tiene, tampoco tiene el espacio entre párrafo y párrafo extra.
 
-El problema abarcará lo que se pretende resolver o se resolvió con el informe, se tiene que ser claro y conciso.
+De ser necesario se podría incluir algun gráfico pequeño, teniendo en cuenta que el máximo en ancho de imagen será de $8.5cm$ como se muestra en la figura \eqref{img1}, tomar este dato con cautela, ya que gráficos como una captura de pantalla no podrán mostrar toda su informacion en 8.5cm de ancho.
 
-\subsection{Abbreviations and Acronyms}
-Define abbreviations and acronyms the first time they are used in the text, 
-even after they have already been defined in the abstract. Abbreviations 
-such as IEEE, SI, ac, and dc do not have to be defined. Abbreviations that 
-incorporate periods should not have spaces: write ``C.N.R.S.,'' not ``C. N. 
-R. S.'' Do not use abbreviations in the title unless they are unavoidable 
-(for example, ``IEEE'' in the title of this article).
-
-\begin{figure}
-    \centering
-        \includegraphics[width=8cm]{imagenes/img2}
-        \caption{A gull}
-        \label{fig:gull}
-\end{figure}
+\begin{figure} %Comenzar la figura
+    \centering %hacemos que la imagen en cuestion esté centrada, si guera de 5 o 6 cm, esta se vea bien
+        \includegraphics[width=8.5cm]{imagenes/img1} %incluimos la imagen con una característica especial: la medida definida en centímetros e incluimos la ruta de imagen sin especificar la extensión de la imagen (solo usaremos .png y .jpg)
+        \caption{Un gráfico de Matlab} %La descripción de la imagen, ser concisos
+        \label{img1} %La etiqueta usada para poder referenciarla desde cualquier parte del texto como se hizo con /eqref{img1}
+\end{figure} %finalizamos la figura
 
 \section{Objetivos}
-Use either SI (MKS) or CGS as primary units. (SI units are strongly 
-encouraged.) English units may be used as secondary units (in parentheses). 
-This applies to papers in data storage. For example, write ``15 
-Gb/cm$^{2}$ (100 Gb/in$^{2})$.'' An exception is when 
-English units are used as identifiers in trade, such as ``3  
-disk drive.'' Avoid combining SI and CGS units, such as current in amperes 
-and magnetic field in oersteds. This often leads to confusion because 
-equations do not balance dimensionally. If you must use mixed units, clearly 
-state the units for each quantity in an equation.
 
-The SI unit for magnetic field strength $H$ is A/m. However, if you wish to use 
-units of T, either refer to magnetic flux density $B$ or magnetic field 
-strength symbolized as $\mu _{0}H$. Use the center dot to separate 
-compound units, e.g., ``A$\cdot $m$^{2}$.''
+Descripcion sencilla con los mismos parámetros de ''Problemas''  en \eqref{problema} %Ojo, para las comillas, usar las comillas simples 'para este texto', o dos veces las comillas simples ''para usar las comillas dobles'',
 
-\subsection{Idea Principal}
+\section{Procedimiento}
+\label{procedimiento}
 
-Se plantea de manera general lo que se hará o se hizo para solucionar el problema.
+El planteamiento debe extar expresado en un lenguaje claro, no redundante y bien detallado. Citando libros, artículos (referencias externas en general como \cite{libro1} , o citando carios libros a la vez \cite{libro2, libro2, libro3}), tambien haciendo referencia a teoremas, ejemplos, ecuaciones
+
+\begin{teor}
+\rm
+\label{fhfthfy_}
+El \textbf{Teorema de Feynman} relaciona el derivado de la energía total con respecto a un parámetro, al valor de la expectativa del derivado del hamiltoniano con respecto a ese mismo parámetro. Su aplicación más común está en el cálculo de fuerzas en moléculas (con los parámetros que son las posiciones de los núcleos) donde declara que una vez que la distribución espacial de los electrones se ha determinado solucionando la ecuación de Schrödinger, todas las fuerzas en el sistema se pueden calcular usando conceptos de la electrostática clásica.
 
 \begin{equation}
- \left.\begin{aligned}
-        B'&=-\partial \times E,\\
-        E'&=\partial \times B - 4\pi j,
-       \end{aligned}
- \right\}
- \qquad \text{Maxwell's equations}
+\bigg\langle\frac {d\psi (\lambda)} {d\lambda } \left| \hat {H} _ {\lambda } \right| \psi (\lambda) \bigg\rangle + \langle\psi (\lambda)  |\hat {H} _ {\lambda } |\frac {d\psi (\lambda)} {d\lambda }\rangle + \bigg\langle\psi (\lambda) \bigg |\frac {d\hat {H} _ {\lambda}} {d\lambda } |\psi (\lambda) \bigg\rangle 
 \end{equation}
 
-The word ``data'' is plural, not singular. The subscript for the 
-permeability of vacuum $\mu _{0}$ is zero, not a lowercase letter 
-``o.'' The term for residual magnetization is ``remanence''; the adjective 
-is ``remanent''; do not write ``remnance'' or ``remnant.'' Use the word 
-``micrometer'' instead of ``micron.'' A graph within a graph is an 
-``inset,'' not an ``insert.'' The word ``alternatively'' is preferred to the 
-word ``alternately'' (unless you really mean something that alternates). Use 
-the word ``whereas'' instead of ``while'' (unless you are referring to 
-simultaneous events). Do not use the word ``essentially'' to mean 
-``approximately'' or ``effectively.'' Do not use the word ``issue'' as a 
-euphemism for ``problem.'' When compositions are not specified, separate 
-chemical symbols by en-dashes; for example, ``NiMn'' indicates the 
-intermetallic compound Ni$_{0.5}$Mn$_{0.5}$ whereas 
-``Ni--Mn'' indicates an alloy of some composition 
-Ni$_{x}$Mn$_{1-x}$.
+\begin{eqnarray}
+ \frac1{t - z} & = & \frac1{t - a - (z - a)} \\
+ & = & \frac1{t - a}
+  \left( \frac1{1 - \frac{z - a}{t - a}} \right) \\
+ & = & \frac1{t - a}
+  \left[ \sum_{i=0}^n \left( \frac{z - a}{t - a} \right)^n
+  + \frac{\left( \frac{z - a}{t - a} \right)^{n+1}}
+  {1 + \frac{z - a}{t - a}} \right]
+\end{eqnarray}
 
-\section{Planteamiento/Procedimiento}
-\label{sec:guidelines}
+\end{teor}
 
 \subsection{Types of Graphics}
 The following list outlines the different types of graphics published in 
 IEEE journals. They are categorized based on their construction, and use of 
 color/shades of gray:
 
-\begin{figure}
-    \centering
-        \includegraphics[width=8cm]{imagenes/img3}
-        \caption{A gull}
-        \label{fig:gull}
+\begin{figure}%
+\centering
+\subfigure[]{\includegraphics[width=8cm]{imagenes/img2} \label{subfiguraA}}
+\subfigure[]{\includegraphics[width=4cm]{imagenes/img3} \label{subfiguraB}}
+\subfigure[]{\includegraphics[width=4cm]{imagenes/img4} \label{subfiguraC}}
+\caption{Tenemos tres subfiguras, la subfigura \ref{subfiguraA}, tambien tenemos la \ref{subfiguraB} y la \ref{subfiguraC}}
+\label{3figs}
 \end{figure}
 
 \subsubsection{Color/Grayscale figures}
@@ -183,53 +183,12 @@ should have no shades or half-tones of gray, only black and white.}
 
 \subsection{Lineas de código}
 
-\begin{lstlisting}[style=C]
-import numpy as np
-class NeuralNetwork:
-  def __init__(self,
-      no_of_in_nodes,
-      no_of_out_nodes,
-      no_of_hidden_nodes,
-      learning_rate):
-    self.no_of_in_nodes = no_of_in_nodes
-    self.no_of_out_nodes = no_of_out_nodes
-    self.no_of_hidden_nodes = no_of_hidden_nodes
-    self.learning_rate = learning_rate
-    self.create_weight_matrices()
 
-  def create_weight_matrices(self):
-    rad = 1 / np.sqrt(self.no_of_in_nodes)
-    X = truncated_normal(mean=0, sd=1, low=-rad, upp=rad)
-    self.weights_in_hidden = X.rvs((self.no_of_hidden_nodes,
-         self.no_of_in_nodes))
-    rad = 1 / np.sqrt(self.no_of_hidden_nodes)
-    X = truncated_normal(mean=0, sd=1, low=-rad, upp=rad)
-    self.weights_hidden_out = X.rvs((self.no_of_out_nodes,
-         self.no_of_hidden_nodes))
-
-
-  def train(self):
-    pass
-
-  def run(self):
-    pass
-
-
-if __name__ == "__main__":
-  simple_network = NeuralNetwork(no_of_in_nodes = 3,
-                   no_of_out_nodes = 2,
-                   no_of_hidden_nodes = 4,
-                   learning_rate = 0.1)
-  print(simple_network.weights_in_hidden)
-  print(simple_network.weights_hidden_out)
-\end{lstlisting}
 
 \noindent
 Ahora compila usando \texttt{gcc}:
 
-\begin{listing}[style=consola, numbers=none]
-gcc  -o hello hello.c
-\end{listing}
+
 
 \subsubsection{Tables}
 {Data charts which are typically black and white, but sometimes include 
@@ -329,6 +288,8 @@ A conclusion section is not required. Although a conclusion may review the
 main points of the paper, do not replicate the abstract as the conclusion. A 
 conclusion might elaborate on the importance of the work or suggest 
 applications and extensions. 
+
+\lstinputlisting[language=Octave]{codigo/graf1.m}
 
 
 %La bibliografía:
